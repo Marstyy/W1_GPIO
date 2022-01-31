@@ -125,29 +125,29 @@ int main(void)
 
 	  /*6*/
 	  //Button
-	  	static GPIO_PinState B1State[2] = {0};
-	  	static uint32_t TimeDelay =500; //ms
-		B1State[0] = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13); // READ PIN B1 [PC13]
-		if (B1State[1] == GPIO_PIN_SET && B1State[0] == GPIO_PIN_RESET) //falling edge
-		{
-		  if(TimeDelay == 500)
-		  {
-			  TimeDelay = 1000;
-		  }
-		  else
-		  {
-			  TimeDelay = 500;
-		  }
-		}
-		B1State[1] = B1State[0];
-
-		//LED
-		static uint32_t timeStamp = 0;
-		if( HAL_GetTick() - timeStamp >= TimeDelay)
-		{
-		  timeStamp = HAL_GetTick();
-		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-		}
+//	  	static GPIO_PinState B1State[2] = {0};
+//	  	static uint32_t TimeDelay =500; //ms
+//		B1State[0] = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13); // READ PIN B1 [PC13]
+//		if (B1State[1] == GPIO_PIN_SET && B1State[0] == GPIO_PIN_RESET) //falling edge
+//		{
+//		  if(TimeDelay == 500)
+//		  {
+//			  TimeDelay = 1000;
+//		  }
+//		  else
+//		  {
+//			  TimeDelay = 500;
+//		  }
+//		}
+//		B1State[1] = B1State[0];
+//
+//		//LED
+//		static uint32_t timeStamp = 0;
+//		if( HAL_GetTick() - timeStamp >= TimeDelay)
+//		{
+//		  timeStamp = HAL_GetTick();
+//		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+//		}
 
     /* USER CODE END WHILE */
 
